@@ -15,10 +15,9 @@
 
 (define (checksum)
   (let-values ([(a b) (for/fold ([twos 0] [threes 0])
-            ([line (file->lines "day2input.txt")])
-            (let ((vals (check-line line)))
-              (values (+ twos (car vals)) (+ threes (cdr vals)))))])
-   (* a b)))
+                                ([line (file->lines "day2input.txt")])
+                                (let ((vals (check-line line)))
+                                  (values (+ twos (car vals)) (+ threes (cdr vals)))))])
+    (* a b)))
 
 (checksum)
-
